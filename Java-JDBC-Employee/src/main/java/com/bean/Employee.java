@@ -6,18 +6,20 @@ public class Employee {
     private String EMiddleName;
     private String ELastName;
     private String EPost;
+    private String EGender;
     private double ESalary;
     private int EAge;
 
     public Employee() {
     }
 
-    public Employee(long EId, String EFirstName, String EMiddleName, String ELastName, String EPost, double ESalary, int EAge) {
+    public Employee(long EId, String EFirstName, String EMiddleName, String ELastName, String EPost, String EGender, double ESalary, int EAge) {
         this.EId = EId;
         this.EFirstName = EFirstName;
         this.EMiddleName = EMiddleName;
         this.ELastName = ELastName;
         this.EPost = EPost;
+        this.EGender = EGender;
         this.ESalary = ESalary;
         this.EAge = EAge;
     }
@@ -76,5 +78,13 @@ public class Employee {
 
     public void setEAge(int EAge) {
         this.EAge = EAge;
+    }
+
+    public String getEGender() {
+        return EGender;
+    }
+
+    public void setEGender(String EGender) {
+        this.EGender = EGender;
     }
 }
