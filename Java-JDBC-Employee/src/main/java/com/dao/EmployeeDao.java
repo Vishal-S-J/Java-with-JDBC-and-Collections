@@ -12,12 +12,11 @@ public class EmployeeDao {
     }
 
     public List<Employee> displayAll(List<Employee> employeeList) {
-        Employee employee = null;
-        if(employeeList != null) {
-            for (Employee emp : employeeList) {
-                System.out.println(emp);
-            }
-        }
+        return employeeList;
+    }
+
+    public List<Employee> insert(Employee employee) {
+        employeeList.add(employee);
         return employeeList;
     }
 }
