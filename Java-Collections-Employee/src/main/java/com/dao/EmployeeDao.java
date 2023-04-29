@@ -18,6 +18,9 @@ public class EmployeeDao {
 
     public void display() {
         System.out.println("Hello im in display");
+        for (Employee employee : employees) {
+            System.out.println(employee.getId);
+        }
     }
 
     public void insert() {}
