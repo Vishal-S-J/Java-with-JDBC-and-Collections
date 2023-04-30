@@ -8,46 +8,68 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
-    EmployeeList employeeList = new EmployeeList();
     EmployeeView employeeView = new EmployeeView();
+    List<Employee> employees;
 
     public EmployeeDao(List<Employee> employees) {
-        employeeList.setEmployees(employees);
+        this.employees = employees;
     }
 
     public void display() {
-        if(employeeList.getEmployees() != null) {
+        if(employees.isEmpty()) {
+            System.out.println("EMPLOYEE LIST IS EMPTY");
+        } else {
             System.out.printf("---------------------%n");
             System.out.printf("| %4s | %-10s |%n", "ID", "NAME");
             System.out.printf("---------------------%n");
-            for (Employee employee : employeeList.getEmployees()) {
+            for (Employee employee : employees) {
                 employeeView.displayAllEmployees(employee);
             }
             System.out.printf("---------------------%n");
-        } else {
-            System.out.println("EMPLOYEE LIST IS EMPTY");
         }
     }
 
     public void insert(long id, String name) {
         Employee employee = new Employee(id, name);
-        for(Employee emp : employeeList.getEmployees()) {
-            if (emp.getId() != id) {
-                employeeList.getEmployees().add(employee);
-                System.out.println("EMPLOYEE ADDED");
+        int count = 0;
+        if (employees.isEmpty()) {
+            employees.add(employee);
+            count++;
+        } else {
+            for (Employee emp : employees) {
+                if(emp.getId() == id) {
+                    count++;
+                    break;
+                } else {
+                    count = 0;
+                }
             }
-            System.out.println("ERROR IN ADDING EMPLOYEE DETAILS");
+        }
+
+        if(count == 0) {
+            employees.add(employee);
+        } else {
+            System.out.println("EMPLOYEE ALREADY EXIST");
         }
     }
 
     public void delete(long id) {
-        for (Employee employee : employeeList.getEmployees()) {
-            if(employee.getId() == id) {
-                employeeList.getEmployees().remove(id);
-                break;
+        int count = 0;
+        if (employees.isEmpty()) {
+//            count++;
+            System.out.println("EMPLOYEE LIST IS EMPTY");
+        } else {
+            for (Employee emp : employees) {
+                if(emp.getId() == id) {
+//                    count++;
+                    System.out.println("EMPLOYEE DELETED");
+                    break;
+                } else {
+                    System.out.println("EMPLOYEE NOT FOUND");
+//                    count = 0;
+                }
             }
         }
-        System.out.println("EMPLOYEE ID NOT FOUND");
     }
 
     public void update() {}
