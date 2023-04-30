@@ -9,7 +9,6 @@ import java.util.List;
 
 public class EmployeeDao {
     EmployeeList employeeList = new EmployeeList();
-
     EmployeeView employeeView = new EmployeeView();
 
     public EmployeeDao(List<Employee> employees) {
@@ -33,6 +32,8 @@ public class EmployeeDao {
     public void insert(long id, String name) {
         Employee employee = new Employee(id, name);
         employeeList.getEmployees().add(employee);
+        System.out.println("EMPLOYEE ADDED");
+        System.out.println("ERROR IN ADDING EMPLOYEE DETAILS");
     }
 
     public void delete(long id) {
@@ -41,8 +42,8 @@ public class EmployeeDao {
                 employeeList.getEmployees().remove(id);
                 break;
             }
-            System.out.println("EMPLOYEE ID NOT FOUND");
         }
+        System.out.println("EMPLOYEE ID NOT FOUND");
     }
 
     public void update() {}
