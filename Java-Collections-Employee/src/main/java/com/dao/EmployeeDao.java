@@ -11,32 +11,34 @@ public class EmployeeDao {
     EmployeeList employeeList = new EmployeeList();
 
     EmployeeView employeeView = new EmployeeView();
-    List<Employee> employees = employeeList.getEmployees();
 
     public EmployeeDao(List<Employee> employees) {
-        this.employees = employees;
         employeeList.setEmployees(employees);
     }
 
     public void display() {
-        System.out.printf("---------------------%n");
-        System.out.printf("| %4s | %-10s |%n", "ID", "NAME");
-        System.out.printf("---------------------%n");
-        for(Employee employee : employees) {
-            employeeView.displayAllEmployees(employee);
+        if(employeeList.getEmployees() != null) {
+            System.out.printf("---------------------%n");
+            System.out.printf("| %4s | %-10s |%n", "ID", "NAME");
+            System.out.printf("---------------------%n");
+            for (Employee employee : employeeList.getEmployees()) {
+                employeeView.displayAllEmployees(employee);
+            }
+            System.out.printf("---------------------%n");
+        } else {
+            System.out.println("EMPLOYEE LIST IS EMPTY");
         }
-        System.out.printf("---------------------%n");
     }
 
     public void insert(long id, String name) {
         Employee employee = new Employee(id, name);
-        employees.add(employee);
+        employeeList.getEmployees().add(employee);
     }
 
     public void delete(long id) {
-        for (Employee employee : employees) {
+        for (Employee employee : employeeList.getEmployees()) {
             if(employee.getId() == id) {
-                employees.remove(id);
+                employeeList.getEmployees().remove(id);
                 break;
             }
             System.out.println("EMPLOYEE ID NOT FOUND");

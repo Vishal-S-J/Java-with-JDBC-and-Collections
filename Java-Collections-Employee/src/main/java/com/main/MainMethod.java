@@ -17,7 +17,7 @@ public class MainMethod {
 
         long id;
 
-        int choice = 2;
+        int choice = 1;
         switch (choice) {
             case 1:
                 employeeDao.display();
