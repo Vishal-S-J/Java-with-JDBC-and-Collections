@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e226f8d1-6261-4579-8945-a36413f216b6" name="Changes" comment="new Student Code added">
-      <change beforePath="$PROJECT_DIR$/../Java-Collections-Employee/src/main/java/com/dao/EmployeeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java-Collections-Employee/src/main/java/com/dao/EmployeeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Java-Collections-Employee/target/classes/com/dao/EmployeeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Java-Collections-Employee/target/classes/com/dao/EmployeeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Java-Collections-Employee/src/main/java/com/collections/EmployeeList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Java-Collections-Employee/src/main/java/com/collections/EmployeeList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

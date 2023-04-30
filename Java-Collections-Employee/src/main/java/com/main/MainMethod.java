@@ -14,6 +14,7 @@ public class MainMethod {
         Scanner sc = new Scanner(System.in);
         EmployeeList employeeList = new EmployeeList();
         EmployeeDao employeeDao = new EmployeeDao(employeeList.getEmployees());
+        employeeList.defaultList();
         long id;
         char ch;
         int cho;

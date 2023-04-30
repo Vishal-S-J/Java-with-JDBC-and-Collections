@@ -62,6 +62,7 @@ public class EmployeeDao {
             for (Employee emp : employees) {
                 if(emp.getId() == id) {
 //                    count++;
+                    employees.remove(emp.getId());
                     System.out.println("EMPLOYEE DELETED");
                     break;
                 } else {
