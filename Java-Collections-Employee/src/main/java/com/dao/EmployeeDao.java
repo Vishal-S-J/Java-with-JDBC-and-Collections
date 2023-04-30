@@ -31,9 +31,13 @@ public class EmployeeDao {
 
     public void insert(long id, String name) {
         Employee employee = new Employee(id, name);
-        employeeList.getEmployees().add(employee);
-        System.out.println("EMPLOYEE ADDED");
-        System.out.println("ERROR IN ADDING EMPLOYEE DETAILS");
+        for(Employee emp : employeeList.getEmployees()) {
+            if (emp.getId() != id) {
+                employeeList.getEmployees().add(employee);
+                System.out.println("EMPLOYEE ADDED");
+            }
+            System.out.println("ERROR IN ADDING EMPLOYEE DETAILS");
+        }
     }
 
     public void delete(long id) {

@@ -34,7 +34,7 @@ public class MainMethod {
                     employeeDao.display();
                     break;
                 case 3:
-                    System.out.println("Enter id y want to delete");
+                    System.out.println("Enter id you want to delete");
                     id = sc.nextInt();
                     employeeDao.delete(id);
                     employeeDao.display();
