@@ -9,8 +9,9 @@ import java.util.List;
 
 public class EmployeeDao {
     EmployeeList employeeList = new EmployeeList();
+
     EmployeeView employeeView = new EmployeeView();
-    List<Employee> employees;
+    List<Employee> employees = employeeList.getEmployees();
 
     public EmployeeDao(List<Employee> employees) {
         this.employees = employees;
@@ -27,8 +28,8 @@ public class EmployeeDao {
         System.out.printf("---------------------%n");
     }
 
-    public void insert(Employee employee, long id, String name) {
-        employee = new Employee(id, name);
+    public void insert(long id, String name) {
+        Employee employee = new Employee(id, name);
         employees.add(employee);
     }
 
