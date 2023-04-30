@@ -20,15 +20,27 @@ public class MainMethod {
     public static void main(String[] args) {
         EmployeeList employeeList = new EmployeeList();
         List<Employee> employees = new ArrayList<>();
+        EmployeeDao employeeDao = new EmployeeDao(employees);
+
         Employee employee = new Employee();
         employee.setId(12);
         employee.setName("RAJESH");
+        Employee employee1 = new Employee(17, "RAVI");
 
         employees.add(employee);
+        employees.add(employee1);
 
         employeeList.setEmployees(employees);
 
-        EmployeeDao employeeDao = new EmployeeDao();
-        employeeDao.display();
+
+        int choice = 1;
+        switch (choice) {
+            case 1:
+                employeeDao.display(employees);
+                break;
+            default:
+                System.out.println("DEFAULT CASE");
+                break;
+        }
     }
 }
