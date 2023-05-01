@@ -1,34 +1,60 @@
 package com.main;
 
 import com.bean.Student;
+import com.collection.ListStudent;
 import com.dao.StudentDao;
 import com.view.StudentView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class MainMethod {
-    static List<Student> studentList = new ArrayList<>();
 
-    public List<Student> studentDefaultList() {
+    public static List<Student> studentDefaultList(List<Student> students) {
         Student student1 = new Student(12, "Vishal");
         Student student2 = new Student(15, "Rahul");
         Student student3 = new Student(18, "Pooja");
         Student student4 = new Student(20, "Ashwin");
 
-        studentList.add(student1);
-        studentList.add(student2);
-        studentList.add(student3);
-        studentList.add(student4);
+        students.add(student1);
+        students.add(student2);
+        students.add(student3);
+        students.add(student4);
 
-        return studentList;
+        return students;
     }
 
     public static void main(String[] args) {
-        MainMethod mainMethod = new MainMethod();
+        Scanner sc = new Scanner(System.in);
+        ListStudent students = new ListStudent();
+        students.setStudentList(studentDefaultList(students.getStudentList()));
+        StudentDao studentDao = new StudentDao(students.getStudentList());
+        char ch;
+        int cho, id;
 
-        StudentDao studentDao = new StudentDao(mainMethod.studentDefaultList());//don't change
-
-        studentDao.display();
+        do {
+            System.out.println("1. DISPLAY\n2. INSERT\n3. DELETE\n4. UPDATE\nENTER YOUR CHOICE :: ");
+            cho = sc.nextInt();
+            switch(cho) {
+                case 1 :
+                    studentDao.display();
+                    break;
+                case 2 :
+                    studentDao.insert();
+                    break;
+                case 3:
+                    studentDao.delete();
+                    break;
+                case 4:
+                    studentDao.update();
+                    break;
+                default:
+                    System.out.println("SELECT APPROPRIATE OPTION");
+                    break;
+            }
+            System.out.println("DO YOU WANT TO CONTINUE (Y/N) :: ");
+            ch = sc.next().charAt(0);
+        } while (ch == 'y' || ch == 'Y');
     }
 }
