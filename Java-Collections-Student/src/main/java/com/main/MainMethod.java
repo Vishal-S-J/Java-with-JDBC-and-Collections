@@ -49,7 +49,9 @@ public class MainMethod {
                     studentDao.insert(id, name);
                     break;
                 case 3:
-                    studentDao.delete();
+                    System.out.println("Enter id to delete : ");
+                    id = sc.nextInt();
+                    studentDao.delete(id);
                     break;
                 case 4:
                     studentDao.update();

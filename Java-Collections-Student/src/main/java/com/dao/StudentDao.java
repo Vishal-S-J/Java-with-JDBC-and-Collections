@@ -50,6 +50,18 @@ public class StudentDao {
             System.out.println("STUDENT ALREADY EXISTS");
         }
     }
-    public void delete() {}
+    public void delete(int id) {
+        if(studentList.isEmpty()) {
+            System.out.println("STUDENT LIST IS EMPTY");
+        } else {
+            for(Student stu : studentList) {
+                if(stu.getId() == id) {
+                    studentList.remove(stu);
+                    System.out.println("STUDENT DELETED");
+                    break;
+                }
+            }
+        }
+    }
     public void update() {}
 }
