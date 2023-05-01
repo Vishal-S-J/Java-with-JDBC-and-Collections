@@ -8,14 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDao {
-    ListStudent listStudent = new ListStudent();
     StudentView studentView = new StudentView();
     List<Student> studentList;
 
     public StudentDao(List<Student> studentList) {
-        listStudent.setStudentList(studentList);
         this.studentList = studentList;
-        studentList = listStudent.getStudentList();
     }
 
     public void display() {
@@ -30,7 +27,29 @@ public class StudentDao {
         System.out.printf("--------------------------------%n");
     }
 
-    public void insert() {}
+    public void insert(int id, String name) {
+        Student student = new Student(id, name);
+        int count = 0;
+
+        if(studentList.isEmpty()) {
+            studentList.add(student);
+        } else {
+            for (Student stu : studentList) {
+                if(stu.getId() == id) {
+                    count++;
+                    break;
+                } else {
+                    count = 0;
+                }
+            }
+        }
+
+        if(count == 0) {
+            studentList.add(student);
+        } else {
+            System.out.println("STUDENT ALREADY EXISTS");
+        }
+    }
     public void delete() {}
     public void update() {}
 }

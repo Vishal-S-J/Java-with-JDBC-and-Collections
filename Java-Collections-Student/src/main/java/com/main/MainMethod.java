@@ -30,6 +30,7 @@ public class MainMethod {
         ListStudent students = new ListStudent();
         students.setStudentList(studentDefaultList(students.getStudentList()));
         StudentDao studentDao = new StudentDao(students.getStudentList());
+        String name;
         char ch;
         int cho, id;
 
@@ -41,7 +42,11 @@ public class MainMethod {
                     studentDao.display();
                     break;
                 case 2 :
-                    studentDao.insert();
+                    System.out.println("Enter student id : ");
+                    id = sc.nextInt();
+                    System.out.println("Enter Student name : ");
+                    name = sc.next();
+                    studentDao.insert(id, name);
                     break;
                 case 3:
                     studentDao.delete();
