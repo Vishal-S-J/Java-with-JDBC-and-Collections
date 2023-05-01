@@ -2,11 +2,6 @@ package com.main;
 
 import com.collections.EmployeeList;
 import com.dao.EmployeeDao;
-import com.model.Employee;
-import com.view.EmployeeView;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class MainMethod {

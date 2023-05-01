@@ -1,10 +1,8 @@
 package com.dao;
 
-import com.collections.EmployeeList;
 import com.model.Employee;
 import com.view.EmployeeView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
