@@ -39,7 +39,11 @@ public class MainMethod {
                     employeeDao.delete(id);
                     break;
                 case 4:
-                    System.out.println("UPDATE LIST");
+                    System.out.println("Enter id to update the name");
+                    id = sc.nextInt();
+                    System.out.println("Enter employee name to update");
+                    name = sc.next();
+                    employeeDao.update(id, name);
                     break;
                 default:
                     System.out.println("SELECT APPROPRIATE CHOICE");

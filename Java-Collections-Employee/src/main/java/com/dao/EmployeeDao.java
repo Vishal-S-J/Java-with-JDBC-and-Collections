@@ -69,5 +69,19 @@ public class EmployeeDao {
         }
     }
 
-    public void update() {}
+    public void update(long id, String name) {
+        if (employees.isEmpty()) {
+            System.out.println("EMPLOYEE LIST IS EMPTY");
+        } else {
+            for (Employee emp : employees) {
+                if(emp.getId() == id) {
+                    emp.setName(name);
+                    System.out.println("EMPLOYEE UPDATED");
+                    break;
+                } else {
+                    System.out.println("ERROR IN UPDATING NAME");
+                }
+            }
+        }
+    }
 }
