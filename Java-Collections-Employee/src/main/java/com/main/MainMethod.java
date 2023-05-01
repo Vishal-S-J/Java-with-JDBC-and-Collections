@@ -32,13 +32,11 @@ public class MainMethod {
                     System.out.println("Enter employee name");
                     String name = sc.next();
                     employeeDao.insert(id, name);
-                    employeeDao.display();
                     break;
                 case 3:
                     System.out.println("Enter id you want to delete");
                     id = sc.nextInt();
                     employeeDao.delete(id);
-                    employeeDao.display();
                     break;
                 case 4:
                     System.out.println("UPDATE LIST");

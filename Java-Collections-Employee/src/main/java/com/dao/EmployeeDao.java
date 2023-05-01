@@ -54,20 +54,16 @@ public class EmployeeDao {
     }
 
     public void delete(long id) {
-        int count = 0;
         if (employees.isEmpty()) {
-//            count++;
             System.out.println("EMPLOYEE LIST IS EMPTY");
         } else {
             for (Employee emp : employees) {
                 if(emp.getId() == id) {
-//                    count++;
-                    employees.remove(emp.getId());
+                    employees.remove(emp);
                     System.out.println("EMPLOYEE DELETED");
                     break;
                 } else {
                     System.out.println("EMPLOYEE NOT FOUND");
-//                    count = 0;
                 }
             }
         }
