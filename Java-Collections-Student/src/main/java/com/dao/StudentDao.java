@@ -63,5 +63,17 @@ public class StudentDao {
             }
         }
     }
-    public void update() {}
+    public void update(int id, String name) {
+        if(studentList.isEmpty()) {
+            System.out.println("STUDENT LIST EMPTY");
+        } else {
+            for (Student stu : studentList) {
+                if(stu.getId() == id) {
+                    stu.setName(name);
+                    System.out.println("STUDENT UPDATED");
+                    break;
+                }
+            }
+        }
+    }
 }

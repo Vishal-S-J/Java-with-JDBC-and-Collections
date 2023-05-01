@@ -54,7 +54,11 @@ public class MainMethod {
                     studentDao.delete(id);
                     break;
                 case 4:
-                    studentDao.update();
+                    System.out.println("Enter id to update : ");
+                    id = sc.nextInt();
+                    System.out.println("Enter name : ");
+                    name = sc.next();
+                    studentDao.update(id, name);
                     break;
                 default:
                     System.out.println("SELECT APPROPRIATE OPTION");
