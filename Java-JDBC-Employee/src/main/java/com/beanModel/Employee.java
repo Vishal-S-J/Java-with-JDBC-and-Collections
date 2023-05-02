@@ -8,6 +8,13 @@ public class Employee {
 
     }
 
+    public Employee(String e_FName, String e_LName, int e_Age, String e_Post) {
+        E_Age = e_Age;
+        E_FName = e_FName;
+        E_LName = e_LName;
+        E_Post = e_Post;
+    }
+
     public Employee(int e_Id, int e_Age, String e_FName, String e_LName, String e_Post) {
         E_Id = e_Id;
         E_Age = e_Age;

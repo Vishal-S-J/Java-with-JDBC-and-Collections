@@ -2,10 +2,7 @@ package com.dao;
 
 import com.beanModel.Employee;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +33,15 @@ public class EmployeeDao {
             throw new RuntimeException(e);
         }
         return employees;
+    }
+
+    public void insert(Employee employee) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "INSERT INTO EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) VALUES ('" + employee.getE_FName() + "', '" + employee.getE_LName() + "', " + employee.getE_Age() + ", '" + employee.getE_Post() + "')";
+            statement.executeUpdate(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
