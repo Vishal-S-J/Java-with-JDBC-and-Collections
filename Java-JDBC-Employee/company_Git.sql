@@ -1,0 +1,13 @@
+show databases;
+create database company_git;
+use company_git;
+create table EMPLOYEE (E_ID int(5) unsigned zerofill auto_increment primary key, E_FNAME varchar(30) not null, E_LNAME varchar(30) not null, E_AGE int(3) not null, E_POST varchar(30) not null);
+select * from employee;
+desc employee;
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('JOEY', 'TRIBBIANI', 26, 'HR');
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('PHOEBE', 'BUFFAY', 25, 'HR');
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('CHANDLER', 'BING', 28, 'MANAGER');
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('MONICA', 'GELLER', 26, 'TL');
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('RACHEL', 'GREEN', 24, 'TESTER');
+insert into EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) values ('ROSS', 'GELLER', 26, 'TESTER');
+select * from employee;
