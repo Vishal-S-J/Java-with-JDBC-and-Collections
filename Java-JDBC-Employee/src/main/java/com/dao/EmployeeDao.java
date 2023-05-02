@@ -18,7 +18,7 @@ public class EmployeeDao {
     public List<Employee> display(List<Employee> employees) {
         Employee employee = null;
         try {
-            String sql = "SELECT * FROM STUDENT";
+            String sql = "SELECT * FROM EMPLOYEE";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
