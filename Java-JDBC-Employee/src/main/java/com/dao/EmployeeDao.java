@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeDao {
@@ -15,7 +16,8 @@ public class EmployeeDao {
         this.connection = connection;
     }
 
-    public List<Employee> display(List<Employee> employees) {
+    public List<Employee> display() {
+        List<Employee> employees = new ArrayList<>();
         Employee employee = null;
         try {
             String sql = "SELECT * FROM EMPLOYEE";
