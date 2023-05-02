@@ -32,7 +32,6 @@ public class MainMethod {
                     System.out.println("-------------------------------------------------------");
                 }
                 case 2 -> {
-                    System.out.println("INSERT");
                     System.out.println("Enter first name :: ");
                     String fname = sc.next();
                     System.out.println("Enter last name :: ");
@@ -42,9 +41,23 @@ public class MainMethod {
                     System.out.println("Enter your post :: ");
                     String post = sc.next();
                     Employee employee = new Employee(fname, lname, age, post);
-                    employeeDao.insert(employee);
+                    boolean yesOrNo = employeeDao.insert(employee);
+                    if(yesOrNo) {
+                        System.out.println("EMPLOYEE INSERTED");
+                    } else {
+                        System.out.println("ERROR IN EMPLOYEE INSERTION");
+                    }
                 }
-                case 3 -> System.out.println("DELETE");
+                case 3 -> {
+                    System.out.println("Enter id to Delete :: ");
+                    int id = sc.nextInt();
+                    boolean yesOrNo = employeeDao.delete(id);
+                    if(yesOrNo) {
+                        System.out.println("ERROR IN DELETING EMPLOYEE");
+                    } else {
+                        System.out.println("EMPLOYEE DELETED");
+                    }
+                }
                 case 4 -> System.out.println("UPDATE");
                 default -> System.out.println("SELECT APPROPRIATE CHOICE :: ");
             }

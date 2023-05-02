@@ -8,6 +8,7 @@ import java.util.List;
 
 public class EmployeeDao {
     private final Connection connection;
+    boolean yesOrNo = false;
 
     public EmployeeDao (Connection connection) {
         this.connection = connection;
@@ -35,13 +36,25 @@ public class EmployeeDao {
         return employees;
     }
 
-    public void insert(Employee employee) {
+    public boolean insert(Employee employee) {
         try {
             Statement statement = connection.createStatement();
             String sql = "INSERT INTO EMPLOYEE(E_FNAME, E_LNAME, E_AGE, E_POST) VALUES ('" + employee.getE_FName() + "', '" + employee.getE_LName() + "', " + employee.getE_Age() + ", '" + employee.getE_Post() + "')";
-            statement.executeUpdate(sql);
+            yesOrNo = statement.execute(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return yesOrNo;
+    }
+
+    public boolean delete(int id) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "DELETE FROM EMPLOYEE WHERE E_ID = '"+id+"'";
+            yesOrNo = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return yesOrNo;
     }
 }
