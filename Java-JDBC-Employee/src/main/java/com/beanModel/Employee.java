@@ -4,6 +4,10 @@ public class Employee {
     private int E_Id, E_Age;
     private String E_FName, E_LName, E_Post;
 
+    public Employee() {
+
+    }
+
     public Employee(int e_Id, int e_Age, String e_FName, String e_LName, String e_Post) {
         E_Id = e_Id;
         E_Age = e_Age;
