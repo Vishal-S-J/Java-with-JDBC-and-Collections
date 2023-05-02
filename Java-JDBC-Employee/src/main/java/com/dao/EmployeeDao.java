@@ -16,7 +16,7 @@ public class EmployeeDao {
 
     public List<Employee> display() {
         List<Employee> employees = new ArrayList<>();
-        Employee employee = null;
+        Employee employee;
         try {
             String sql = "SELECT * FROM EMPLOYEE";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -51,6 +51,17 @@ public class EmployeeDao {
         try {
             Statement statement = connection.createStatement();
             String sql = "DELETE FROM EMPLOYEE WHERE E_ID = '"+id+"'";
+            yesOrNo = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return yesOrNo;
+    }
+
+    public boolean update(int id, String up, String dbCol) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "UPDATE EMPLOYEE SET "+dbCol+" = '"+up+"' WHERE E_ID = '"+id+"'";
             yesOrNo = statement.execute(sql);
         } catch (SQLException e) {
             throw new RuntimeException(e);
