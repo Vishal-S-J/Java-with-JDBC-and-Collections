@@ -69,6 +69,46 @@ public class MainMethod {
                         System.out.println("STUDENT DELETED");
                     }
                 }
+                case 4 -> {
+                    System.out.println("Enter id to update");
+                    int id = sc.nextInt();
+                    System.out.println("What do you want to update :: ");
+                    System.out.println("1. First Name\n2. Last Name\n3. Age\n4. Gender\n5. Branch");
+                    int upToDate = sc.nextInt();
+                    switch (upToDate) {
+                        case 1 -> {
+                            System.out.println("Enter your first name to update");
+                            String fname = sc.next();
+                            yesOrNo = studentDao.update(id, fname, "S_FNAME");
+                        }
+                        case 2 -> {
+                            System.out.println("Enter your last name to update");
+                            String lname = sc.next();
+                            yesOrNo = studentDao.update(id, lname, "S_LNAME");
+                        }
+                        case 3 -> {
+                            System.out.println("Enter your age to update");
+                            String age = sc.next();
+                            yesOrNo = studentDao.update(id, age, "S_AGE");
+                        }
+                        case 4 -> {
+                            System.out.println("Enter your gender to update");
+                            String gender = sc.next();
+                            yesOrNo = studentDao.update(id, gender, "S_GENDER");
+                        }
+                        case 5 -> {
+                            System.out.println("Enter your branch to update");
+                            String branch = sc.next();
+                            yesOrNo = studentDao.update(id, branch, "S_BRANCH");
+                        }
+                        default -> System.out.println("ENTER VALID OPTION (EXITING)");
+                    }
+                    if(yesOrNo) {
+                        System.out.println("ERROR IN UPDATING EMPLOYEE");
+                    } else {
+                        System.out.println("EMPLOYEE UPDATED");
+                    }
+                }
             }
             System.out.println("DO YOU WANT TO CONTINUE (Y/N) :: ");
             choice = sc.next().charAt(0);

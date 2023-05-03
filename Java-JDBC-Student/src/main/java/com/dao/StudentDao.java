@@ -59,4 +59,15 @@ public class StudentDao {
         }
         return yesOrNo;
     }
+
+    public boolean update(int id, String up, String dbCol) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "UPDATE STUDENT SET "+dbCol+"='"+up+"' WHERE S_ID = '"+id+"'";
+            yesOrNo = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return yesOrNo;
+    }
 }
