@@ -1,0 +1,15 @@
+show databases;
+create database college_git;
+use college_git;
+create table STUDENT (S_ID int(5) unsigned zerofill auto_increment primary key, S_FNAME varchar(30) not null, S_LNAME varchar(30) not null, S_AGE int(3) not null, S_GENDER varchar(10) not null, S_BRANCH varchar(20) not null);
+desc STUDENT;
+select * from student;
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Jesse','Spears','24','Female','Civil');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Deborah','Gonzalez','25','Female','IT');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Matthew','Owens','26','Male','Computer');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Kevin','Long','25','Male','Mechanical');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('kelly','Velez','25','Female','IT');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Richard','Davis','26','Male','Civil');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Dana','Wallace','25','Female','Computer');
+insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('Robert','Wade','27','Male','Civil');
+select * from student;
