@@ -48,4 +48,15 @@ public class StudentDao {
         }
         return yesOrNo;
     }
+
+    public boolean delete(int id) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "DELETE FROM STUDENT WHERE S_ID = '"+id+"'";
+            yesOrNo = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return yesOrNo;
+    }
 }

@@ -58,6 +58,17 @@ public class MainMethod {
                         System.out.println("STUDENT DATA ADDED");
                     }
                 }
+                case 3 -> {
+                    System.out.println("Enter your id to delete :: ");
+                    int id = sc.nextInt();
+                    yesOrNo = studentDao.delete(id);
+
+                    if (yesOrNo) {
+                        System.out.println("ERROR IN DELETING STUDENT");
+                    } else {
+                        System.out.println("STUDENT DELETED");
+                    }
+                }
             }
             System.out.println("DO YOU WANT TO CONTINUE (Y/N) :: ");
             choice = sc.next().charAt(0);
