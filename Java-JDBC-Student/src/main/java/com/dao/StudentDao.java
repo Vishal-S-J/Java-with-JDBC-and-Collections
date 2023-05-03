@@ -2,15 +2,13 @@ package com.dao;
 
 import com.beanModel.Student;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDao {
     private final Connection connection;
+    boolean yesOrNo = false;
 
     public StudentDao(Connection connection) {
         this.connection = connection;
@@ -38,5 +36,16 @@ public class StudentDao {
             throw new RuntimeException(e);
         }
         return students;
+    }
+
+    public boolean insert(Student student) {
+        try {
+            Statement statement = connection.createStatement();
+            String sql = "insert into student(S_FNAME, S_LNAME, S_AGE, S_GENDER, S_BRANCH) values ('"+student.getS_FNAME()+"','"+student.getS_LNAME()+"','"+student.getS_AGE()+"','"+student.getS_GENDER()+"','"+student.getS_BRANCH()+"')";
+            yesOrNo = statement.execute(sql);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return yesOrNo;
     }
 }
